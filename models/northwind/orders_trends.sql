@@ -1,10 +1,10 @@
 WITH order_trends AS (
   SELECT
-    DATE_TRUNC('month', order_date) AS month,
+    product_id,
     COUNT(order_id) AS num_orders,
-    SUM(freight) AS total_freight
+    SUM(quantity) AS total_quantity
   FROM
-    {{ ref('postgres.orders') }}
+    {{ ref('order_details') }}
   GROUP BY
     month
 )

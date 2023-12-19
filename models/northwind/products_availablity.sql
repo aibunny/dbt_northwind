@@ -10,7 +10,7 @@ WITH product_availability AS (
       ELSE 'In Stock'
     END AS stock_status
   FROM
-    {{ ref('postgres.products') }} p
+    {{ ref('products') }} p
 )
 
 SELECT *
