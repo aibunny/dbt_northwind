@@ -49,14 +49,29 @@ models:
             label: 'Total Quantity'
             description: 'The total quantity of the product ordered.'
 
-  - name: product_availability
+  - name: product_sales
     columns:
-      - name: product_id
+      - name: product_name
+        meta:
+          dimension:
+            type: string
+            label: 'Product Name'
+            description: 'The name of the product.'
+      - name: num_orders
         meta:
           dimension:
             type: number
-            label: 'Product ID'
-            description: 'The unique identifier for a product.'
+            label: 'Number of Orders'
+            description: 'The total number of orders for the product.'
+      - name: total_sales
+        meta:
+          dimension:
+            type: number
+            label: 'Total Sales'
+            description: 'The total sales amount for the product.'
+
+  - name: product_availability
+    columns:
       - name: product_name
         meta:
           dimension:
