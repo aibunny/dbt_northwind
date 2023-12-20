@@ -1,7 +1,0 @@
-version: 2
-
-models:
-  - name: product_sales
-    description: 'Product sales information'
-    materialized: view
-    sql: models/northwind/product_sales.sql

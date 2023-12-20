@@ -1,7 +1,0 @@
-version: 2
-
-models:
-  - name: order_trends
-    description: 'Product order trends'
-    materialized: view
-    sql: models/northwind/order_trends.sql

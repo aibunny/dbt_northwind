@@ -1,8 +1,0 @@
-
-version: 2
-
-models:
-  - name: customer_orders
-    description: 'Aggregated customer order information'
-    materialized: view
-    sql: models/northwind/customer_orders.sql
