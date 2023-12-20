@@ -28,26 +28,38 @@ models:
             label: 'Total Order Amount'
             description: 'The total amount of the order.'
 
-  - name: order_trends
+  - name: customer_segmentation
     columns:
-      - name: product_id
+      - name: customer_id
         meta:
           dimension:
             type: number
-            label: 'Product ID'
-            description: 'The unique identifier for a product.'
+            label: 'Customer ID'
+            description: 'The unique identifier for a customer.'
+      - name: company_name
+        meta:
+          dimension:
+            type: string
+            label: 'Company Name'
+            description: 'The name of the customer company.'
       - name: num_orders
         meta:
           dimension:
             type: number
             label: 'Number of Orders'
-            description: 'The total number of orders for the product.'
-      - name: total_quantity
+            description: 'The total number of orders for the customer.'
+      - name: total_spent
         meta:
           dimension:
             type: number
-            label: 'Total Quantity'
-            description: 'The total quantity of the product ordered.'
+            label: 'Total Spent'
+            description: 'The total amount spent by the customer.'
+      - name: customer_segment
+        meta:
+          dimension:
+            type: string
+            label: 'Customer Segment'
+            description: 'Segmentation based on order count and total spend.'
 
   - name: product_sales
     columns:
@@ -70,41 +82,23 @@ models:
             label: 'Total Sales'
             description: 'The total sales amount for the product.'
 
-  - name: product_availability
+  - name: revenue_by_region
     columns:
-      - name: product_id
-        meta:
-          dimension:
-            type: number
-            label: 'Product ID'
-            description: 'The unique identifier for a product.'
-      - name: product_name
+      - name: ship_region
         meta:
           dimension:
             type: string
-            label: 'Product Name'
-            description: 'The name of the product.'
-      - name: units_in_stock
+            label: 'Ship Region'
+            description: 'The region to which the order is shipped.'
+      - name: num_orders
         meta:
           dimension:
             type: number
-            label: 'Units in Stock'
-            description: 'The number of units currently in stock.'
-      - name: units_on_order
+            label: 'Number of Orders'
+            description: 'The total number of orders for the ship region.'
+      - name: total_sales
         meta:
           dimension:
             type: number
-            label: 'Units on Order'
-            description: 'The number of units currently on order.'
-      - name: reorder_level
-        meta:
-          dimension:
-            type: number
-            label: 'Reorder Level'
-            description: 'The reorder level for the product.'
-      - name: stock_status
-        meta:
-          dimension:
-            type: string
-            label: 'Stock Status'
-            description: 'The stock status of the product.'
+            label: 'Total Sales'
+            description: 'The total sales amount for the ship region.'
