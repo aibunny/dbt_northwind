@@ -11,13 +11,7 @@ sources:
 
 models:
   - name: customer_orders
-    description: 'Aggregated customer order information'
     columns:
-      - name: order_id
-        meta:
-          dimension:
-            type: number
-            label: 'Order ID'
       - name: customer_id
         meta:
           dimension:
@@ -38,9 +32,9 @@ models:
           dimension:
             type: number
             label: 'Total Order Amount'
+            format: 'currency'
 
   - name: order_trends
-    description: 'Product order trends'
     columns:
       - name: product_id
         meta:
@@ -59,7 +53,6 @@ models:
             label: 'Total Quantity'
 
   - name: product_sales
-    description: 'Product sales information'
     columns:
       - name: product_id
         meta:
@@ -81,9 +74,9 @@ models:
           dimension:
             type: number
             label: 'Total Sales'
+            format: 'currency'
 
   - name: product_availability
-    description: 'Product availability information'
     columns:
       - name: product_id
         meta:
@@ -115,4 +108,3 @@ models:
           dimension:
             type: string
             label: 'Stock Status'
-
