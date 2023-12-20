@@ -1,0 +1,8 @@
+
+version: 2
+
+models:
+  - name: product_availability
+    description: 'Product availability information'
+    materialized: view
+    sql: models/northwind/product_availability.sql
