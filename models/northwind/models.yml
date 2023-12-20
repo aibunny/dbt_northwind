@@ -72,6 +72,12 @@ models:
 
   - name: product_availability
     columns:
+      - name: product_id
+        meta:
+          dimension:
+            type: number
+            label: 'Product ID'
+            description: 'The unique identifier for a product.'
       - name: product_name
         meta:
           dimension:
