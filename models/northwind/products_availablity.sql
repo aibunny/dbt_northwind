@@ -10,8 +10,8 @@ WITH product_availability AS (
       ELSE 'In Stock'
     END AS stock_status
   FROM
-    {{ ref('products') }} p
+    {{ source('northwind_data','products') }} p
 )
 
 SELECT *
-FROM product_availability;
+FROM product_availability

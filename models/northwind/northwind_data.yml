@@ -1,0 +1,9 @@
+sources:
+  - name: northwind_data
+    schema: public
+    tables:
+      - name: order_details
+      - name: customers
+      - name: products
+      - name: orders
+      

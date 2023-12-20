@@ -4,10 +4,10 @@ WITH order_trends AS (
     COUNT(order_id) AS num_orders,
     SUM(quantity) AS total_quantity
   FROM
-    {{ ref('order_details') }}
+    {{ source('northwind_data','order_details') }}
   GROUP BY
-    month
+    product_id
 )
 
 SELECT *
-FROM order_trends;
+FROM order_trends
