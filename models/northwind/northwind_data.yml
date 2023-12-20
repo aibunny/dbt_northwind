@@ -8,4 +8,111 @@ sources:
       - name: customers
       - name: products
       - name: orders
-      
+
+models:
+  - name: customer_orders
+    description: 'Aggregated customer order information'
+    columns:
+      - name: order_id
+        meta:
+          dimension:
+            type: number
+            label: 'Order ID'
+      - name: customer_id
+        meta:
+          dimension:
+            type: number
+            label: 'Customer ID'
+      - name: company_name
+        meta:
+          dimension:
+            type: string
+            label: 'Company Name'
+      - name: num_products_ordered
+        meta:
+          dimension:
+            type: number
+            label: 'Number of Products Ordered'
+      - name: total_order_amount
+        meta:
+          dimension:
+            type: number
+            label: 'Total Order Amount'
+
+  - name: order_trends
+    description: 'Product order trends'
+    columns:
+      - name: product_id
+        meta:
+          dimension:
+            type: number
+            label: 'Product ID'
+      - name: num_orders
+        meta:
+          dimension:
+            type: number
+            label: 'Number of Orders'
+      - name: total_quantity
+        meta:
+          dimension:
+            type: number
+            label: 'Total Quantity'
+
+  - name: product_sales
+    description: 'Product sales information'
+    columns:
+      - name: product_id
+        meta:
+          dimension:
+            type: number
+            label: 'Product ID'
+      - name: product_name
+        meta:
+          dimension:
+            type: string
+            label: 'Product Name'
+      - name: num_orders
+        meta:
+          dimension:
+            type: number
+            label: 'Number of Orders'
+      - name: total_sales
+        meta:
+          dimension:
+            type: number
+            label: 'Total Sales'
+
+  - name: product_availability
+    description: 'Product availability information'
+    columns:
+      - name: product_id
+        meta:
+          dimension:
+            type: number
+            label: 'Product ID'
+      - name: product_name
+        meta:
+          dimension:
+            type: string
+            label: 'Product Name'
+      - name: units_in_stock
+        meta:
+          dimension:
+            type: number
+            label: 'Units in Stock'
+      - name: units_on_order
+        meta:
+          dimension:
+            type: number
+            label: 'Units on Order'
+      - name: reorder_level
+        meta:
+          dimension:
+            type: number
+            label: 'Reorder Level'
+      - name: stock_status
+        meta:
+          dimension:
+            type: string
+            label: 'Stock Status'
+
